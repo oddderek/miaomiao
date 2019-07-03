@@ -6,7 +6,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
@@ -18,7 +18,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
@@ -30,7 +30,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
@@ -42,7 +42,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
@@ -54,7 +54,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
@@ -66,7 +66,7 @@
                 <div class="info-list">
                     <h2>无名之辈</h2>
                     <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉，骨舔乐</p>
+                    <p>主演：渣渣辉</p>
                     <p>今天55家放映607场</p>
                 </div>
                 <div class="btn-mall">
