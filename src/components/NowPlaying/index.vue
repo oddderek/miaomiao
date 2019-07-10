@@ -1,85 +1,80 @@
 <template>
-    <div class="movie-body">
-        <ul>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-            <li>
-                <div class="pic-show"><img src="/img/logo.png"></div>
-                <div class="info-list">
-                    <h2>无名之辈</h2>
-                    <p>观众评<span class="grade">9.2</span></p>
-                    <p>主演：渣渣辉</p>
-                    <p>今天55家放映607场</p>
-                </div>
-                <div class="btn-mall">
-                    购票
-                </div>
-            </li>
-        </ul>
+    <div class="movie-body" ref="movie_body">
+        <Scroller>
+            <ul>
+                <span>{{pullDownMsg}}</span>
+                <li v-for="movie in movieList" :key="movie.id">
+                    <div class="pic-show" @tap="handleToDetail()"><img :src="movie.img | setWH('128.180')"></div>
+                    <div class="info-list">
+                        <h2 @tap="handleToDetail(movie.id)">{{movie.nm}}</h2>
+                        <p>观众评 <span class="grade">{{movie.sc}}</span></p>
+                        <p>主演：{{movie.star}}</p>
+                        <p>{{movie.showInfo}}</p>
+                    </div>
+                    <div class="btn-mall">
+                        购票
+                    </div>
+                </li>
+            </ul>
+        </Scroller>
     </div>
 </template>
 
 <script>
+// import BetterScroll from 'better-scroll'
+
 export default {
     name: "nowPlaying",
+    data() {
+        return {
+            movieList: [],
+            pullDownMsg: ""
+        }
+    },
+    methods: {
+        handleToDetail(id) {
+            console.log(id)
+        }
+    },
+    mounted() {
+        this.$axios({
+            methods: "get",
+            url: "/api/movieOnInfoList?cityId=10"
+        }).then((res) => {
+            if(res.data.msg === "ok") {
+                this.movieList = res.data.data.movieList;
+                // this.$nextTick(() => {
+                //     var betterScroll = new BetterScroll(this.$refs.movie_body, {
+                //         tap: true,
+                //         probeType: 1
+                //     });
+                //     betterScroll.on('scroll', (pos) => {
+                //         if( pos.y > 30) {
+                //         console.log("scroll");
+                //             this.pullDownMsg = "loading...";
+                //         }
+                //     })
+                //     betterScroll.on('touchEnd', (pos) => {
+                //         if( pos.y > 30) {
+                //         console.log("touchEnd");
+                //             this.$axios({
+                //                 methods: "get",
+                //                 url: "/api/movieOnInfoList?cityId=11"
+                //             }).then((res) => {
+                //                 if(res.data.msg === "ok") {
+                //                     this.pullDownMsg = "success!";
+                //                     setTimeout(() => {
+                //                         this.movieList = res.data.data.movieList;
+                //                         this.pullDownMsg = "";
+                //                     }, 1000);
+                //                 }
+                //             })
+                //         }
+                //     })
+                // })
+            }
+        })
+    },
 }
 </script>
 
